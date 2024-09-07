@@ -1,0 +1,37 @@
+MainCharacter
+
+hasMainCharacter value Crewmember
+
+hasMainCharacter min 1
+
+VideoGame
+
+hasGenre value Action-Adventure
+
+hasMechanic value Open_world
+
+hasAgeLimit value 18
+
+VideoGame and not(hasAgeLimit value 18)
+
+VideoGame and hasDescription min 1
+
+hasAgeLimit only {18, 21}
+
+hasAgeLimit only xsd:integer[ <= 18]
+
+VideoGame or Genre
+
+VideoGame and Genre
+
+VideoGame and hasRating only xsd:float[ >= 8.5]
+
+VideoGame
+
+VideoGame and not (hasReleaseYear only xsd:int[ >= 2010])
+
+VideoGame and hasType value Single_player
+
+VideoGame and hasRating only xsd:float[ >= 8.5]
+
+VideoGame and hasGenre value RPG
