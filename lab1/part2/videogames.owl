@@ -1,0 +1,2086 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://ontologies/videogames.owl/"
+     xml:base="http://ontologies/videogames.owl/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:videogames="http://ontologies/videogames.owl#">
+    <owl:Ontology rdf:about="http://ontologies/videogames.owl">
+        <rdfs:comment>Онтология видеоигр.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontologies/videogames.owl#hasGenre -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies/videogames.owl#hasGenre">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies/videogames.owl#VideoGame"/>
+        <rdfs:range rdf:resource="http://ontologies/videogames.owl#Genre"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies/videogames.owl#hasMainCharacter -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies/videogames.owl#hasMainCharacter">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies/videogames.owl#VideoGame"/>
+        <rdfs:range rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies/videogames.owl#hasMechanic -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies/videogames.owl#hasMechanic">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies/videogames.owl#VideoGame"/>
+        <rdfs:range rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies/videogames.owl#hasType -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies/videogames.owl#hasType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies/videogames.owl#VideoGame"/>
+        <rdfs:range rdf:resource="http://ontologies/videogames.owl#Type"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontologies/videogames.owl#hasAgeLimit -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies/videogames.owl#hasAgeLimit">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies/videogames.owl#VideoGame"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedShort"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://ontologies/videogames.owl#hasRating -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies/videogames.owl#hasRating">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies/videogames.owl#VideoGame"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <owl:propertyDisjointWith rdf:resource="http://ontologies/videogames.owl#hasReleaseYear"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies/videogames.owl#hasReleaseYear -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies/videogames.owl#hasReleaseYear">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies/videogames.owl#VideoGame"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontologies/videogames.owl#Characteristic -->
+
+    <owl:Class rdf:about="http://ontologies/videogames.owl#Characteristic">
+        <owl:disjointWith rdf:resource="http://ontologies/videogames.owl#Creature"/>
+        <owl:disjointWith rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+        <rdfs:comment>Class for explaining characteristics for videogames.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Creature -->
+
+    <owl:Class rdf:about="http://ontologies/videogames.owl#Creature">
+        <owl:disjointWith rdf:resource="http://ontologies/videogames.owl#Genre"/>
+        <owl:disjointWith rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+        <owl:disjointWith rdf:resource="http://ontologies/videogames.owl#Type"/>
+        <rdfs:comment>Class for saving information about creatures.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Genre -->
+
+    <owl:Class rdf:about="http://ontologies/videogames.owl#Genre">
+        <rdfs:subClassOf rdf:resource="http://ontologies/videogames.owl#Characteristic"/>
+        <owl:disjointWith rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+        <owl:disjointWith rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+        <owl:disjointWith rdf:resource="http://ontologies/videogames.owl#Type"/>
+        <rdfs:comment>Class for saving information about genre.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies/videogames.owl#MainCharacter -->
+
+    <owl:Class rdf:about="http://ontologies/videogames.owl#MainCharacter">
+        <rdfs:subClassOf rdf:resource="http://ontologies/videogames.owl#Creature"/>
+        <owl:disjointWith rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+        <owl:disjointWith rdf:resource="http://ontologies/videogames.owl#Type"/>
+        <rdfs:comment>Class for saving information about main character.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Mechanic -->
+
+    <owl:Class rdf:about="http://ontologies/videogames.owl#Mechanic">
+        <rdfs:subClassOf rdf:resource="http://ontologies/videogames.owl#Characteristic"/>
+        <owl:disjointWith rdf:resource="http://ontologies/videogames.owl#Type"/>
+        <rdfs:comment>Class for saving information about mechanic of game.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Type -->
+
+    <owl:Class rdf:about="http://ontologies/videogames.owl#Type">
+        <rdfs:subClassOf rdf:resource="http://ontologies/videogames.owl#Characteristic"/>
+        <rdfs:comment>Class for saving information about type of game.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies/videogames.owl#VideoGame -->
+
+    <owl:Class rdf:about="http://ontologies/videogames.owl#VideoGame">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>Class for saving information about video games.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies/videogames.owl#WellRatedVideoGame -->
+
+    <owl:Class rdf:about="http://ontologies/videogames.owl#WellRatedVideoGame">
+        <rdfs:subClassOf rdf:resource="http://ontologies/videogames.owl#VideoGame"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontologies/videogames.owl#Action-Adventure -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Action-Adventure">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Action_RPG -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Action_RPG">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Characteristic"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Among_Us -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Among_Us">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#VideoGame"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#WellRatedVideoGame"/>
+        <videogames:hasGenre rdf:resource="http://ontologies/videogames.owl#Social_Deduction"/>
+        <videogames:hasMainCharacter rdf:resource="http://ontologies/videogames.owl#Crewmember"/>
+        <videogames:hasMechanic rdf:resource="http://ontologies/videogames.owl#Open_world"/>
+        <videogames:hasType rdf:resource="http://ontologies/videogames.owl#Multiplayer"/>
+        <videogames:hasAgeLimit rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">10</videogames:hasAgeLimit>
+        <videogames:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">9.1</videogames:hasRating>
+        <videogames:hasReleaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">2020</videogames:hasReleaseYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Arthur_Morgan -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Arthur_Morgan">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Creature"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Assassins_Creed_Valhalla -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Assassins_Creed_Valhalla">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#VideoGame"/>
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+            </owl:Restriction>
+        </rdf:type>
+        <videogames:hasGenre rdf:resource="http://ontologies/videogames.owl#Action-Adventure"/>
+        <videogames:hasMainCharacter rdf:resource="http://ontologies/videogames.owl#Eivor"/>
+        <videogames:hasMechanic rdf:resource="http://ontologies/videogames.owl#Role-Playing"/>
+        <videogames:hasType rdf:resource="http://ontologies/videogames.owl#Single_player"/>
+        <videogames:hasAgeLimit rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">18</videogames:hasAgeLimit>
+        <videogames:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">7.1</videogames:hasRating>
+        <videogames:hasReleaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2017</videogames:hasReleaseYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Battle -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Battle">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Battle_Arena -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Battle_Arena">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Characteristic"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Battle_Royale -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Battle_Royale">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Characteristic"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Card_and_Board_Games -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Card_and_Board_Games">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Characteristic"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Crafting -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Crafting">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Characteristic"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Crewmember -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Crewmember">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Creature"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Custom_Operator -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Custom_Operator">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Custom_Player -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Custom_Player">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Creature"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Cyberpunk_2077 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Cyberpunk_2077">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#VideoGame"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#WellRatedVideoGame"/>
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+            </owl:Restriction>
+        </rdf:type>
+        <videogames:hasGenre rdf:resource="http://ontologies/videogames.owl#Action_RPG"/>
+        <videogames:hasMainCharacter rdf:resource="http://ontologies/videogames.owl#V"/>
+        <videogames:hasMechanic rdf:resource="http://ontologies/videogames.owl#Crafting"/>
+        <videogames:hasType rdf:resource="http://ontologies/videogames.owl#Single_player"/>
+        <videogames:hasAgeLimit rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">16</videogames:hasAgeLimit>
+        <videogames:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">8.9</videogames:hasRating>
+        <videogames:hasReleaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2007</videogames:hasReleaseYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Dark_Souls_III -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Dark_Souls_III">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#VideoGame"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#WellRatedVideoGame"/>
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+            </owl:Restriction>
+        </rdf:type>
+        <videogames:hasGenre rdf:resource="http://ontologies/videogames.owl#Action_RPG"/>
+        <videogames:hasMainCharacter rdf:resource="http://ontologies/videogames.owl#The_Ashen_One"/>
+        <videogames:hasMechanic rdf:resource="http://ontologies/videogames.owl#Card_and_Board_Games"/>
+        <videogames:hasType rdf:resource="http://ontologies/videogames.owl#Multiplayer"/>
+        <videogames:hasAgeLimit rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">17</videogames:hasAgeLimit>
+        <videogames:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">9.4</videogames:hasRating>
+        <videogames:hasReleaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2018</videogames:hasReleaseYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Default_Skin -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Default_Skin">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Creature"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Dragonborn -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Dragonborn">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Creature"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Eivor -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Eivor">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Creature"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Empty -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Empty">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Creature"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Ethan_Winters -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Ethan_Winters">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Creature"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#FIFA_22 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#FIFA_22">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#VideoGame"/>
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+            </owl:Restriction>
+        </rdf:type>
+        <videogames:hasGenre rdf:resource="http://ontologies/videogames.owl#Sports"/>
+        <videogames:hasMainCharacter rdf:resource="http://ontologies/videogames.owl#Custom_Player"/>
+        <videogames:hasMechanic rdf:resource="http://ontologies/videogames.owl#Team"/>
+        <videogames:hasType rdf:resource="http://ontologies/videogames.owl#Multiplayer"/>
+        <videogames:hasAgeLimit rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">18</videogames:hasAgeLimit>
+        <videogames:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">7.4</videogames:hasRating>
+        <videogames:hasReleaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2021</videogames:hasReleaseYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Fighting -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Fighting">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Characteristic"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#First-Person_Shooter -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#First-Person_Shooter">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Characteristic"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Fortnite -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Fortnite">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#VideoGame"/>
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+            </owl:Restriction>
+        </rdf:type>
+        <videogames:hasGenre rdf:resource="http://ontologies/videogames.owl#Battle_Royale"/>
+        <videogames:hasMainCharacter rdf:resource="http://ontologies/videogames.owl#Default_Skin"/>
+        <videogames:hasMechanic rdf:resource="http://ontologies/videogames.owl#Battle"/>
+        <videogames:hasType rdf:resource="http://ontologies/videogames.owl#Multiplayer"/>
+        <videogames:hasAgeLimit rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">18</videogames:hasAgeLimit>
+        <videogames:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">8.26</videogames:hasRating>
+        <videogames:hasReleaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2019</videogames:hasReleaseYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Geralt_of_Rivia -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Geralt_of_Rivia">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Creature"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Ginger -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Ginger">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#VideoGame"/>
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+            </owl:Restriction>
+        </rdf:type>
+        <videogames:hasGenre rdf:resource="http://ontologies/videogames.owl#Moba"/>
+        <videogames:hasMainCharacter rdf:resource="http://ontologies/videogames.owl#Steve"/>
+        <videogames:hasMechanic rdf:resource="http://ontologies/videogames.owl#Open_world"/>
+        <videogames:hasType rdf:resource="http://ontologies/videogames.owl#Multiplayer"/>
+        <videogames:hasType rdf:resource="http://ontologies/videogames.owl#Single_player"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Grand_Theft_Auto_V -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Grand_Theft_Auto_V">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#VideoGame"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#WellRatedVideoGame"/>
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+            </owl:Restriction>
+        </rdf:type>
+        <videogames:hasGenre rdf:resource="http://ontologies/videogames.owl#Action-Adventure"/>
+        <videogames:hasMainCharacter rdf:resource="http://ontologies/videogames.owl#Michael_De_Santa"/>
+        <videogames:hasMechanic rdf:resource="http://ontologies/videogames.owl#Open_world"/>
+        <videogames:hasType rdf:resource="http://ontologies/videogames.owl#Single_player"/>
+        <videogames:hasAgeLimit rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">18</videogames:hasAgeLimit>
+        <videogames:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10.0</videogames:hasRating>
+        <videogames:hasReleaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2018</videogames:hasReleaseYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Halo_Infinite -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Halo_Infinite">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#VideoGame"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#WellRatedVideoGame"/>
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+            </owl:Restriction>
+        </rdf:type>
+        <videogames:hasGenre rdf:resource="http://ontologies/videogames.owl#First-Person_Shooter"/>
+        <videogames:hasMainCharacter rdf:resource="http://ontologies/videogames.owl#Master_Chief"/>
+        <videogames:hasMechanic rdf:resource="http://ontologies/videogames.owl#Survival"/>
+        <videogames:hasType rdf:resource="http://ontologies/videogames.owl#Single_player"/>
+        <videogames:hasAgeLimit rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">14</videogames:hasAgeLimit>
+        <videogames:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">8.99</videogames:hasRating>
+        <videogames:hasReleaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2015</videogames:hasReleaseYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#League_of_Legends -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#League_of_Legends">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#VideoGame"/>
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+            </owl:Restriction>
+        </rdf:type>
+        <videogames:hasGenre rdf:resource="http://ontologies/videogames.owl#Moba"/>
+        <videogames:hasMainCharacter rdf:resource="http://ontologies/videogames.owl#Summoner"/>
+        <videogames:hasMechanic rdf:resource="http://ontologies/videogames.owl#Battle_Arena"/>
+        <videogames:hasType rdf:resource="http://ontologies/videogames.owl#Multiplayer"/>
+        <videogames:hasAgeLimit rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">16</videogames:hasAgeLimit>
+        <videogames:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0</videogames:hasRating>
+        <videogames:hasReleaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2012</videogames:hasReleaseYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Link -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Link">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Creature"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Mario -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Mario">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Creature"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Master_Chief -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Master_Chief">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Creature"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Michael_De_Santa -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Michael_De_Santa">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Creature"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Minecraft -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Minecraft">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#VideoGame"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#WellRatedVideoGame"/>
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+            </owl:Restriction>
+        </rdf:type>
+        <videogames:hasGenre rdf:resource="http://ontologies/videogames.owl#Sandbox"/>
+        <videogames:hasMainCharacter rdf:resource="http://ontologies/videogames.owl#Steve"/>
+        <videogames:hasMechanic rdf:resource="http://ontologies/videogames.owl#Crafting"/>
+        <videogames:hasType rdf:resource="http://ontologies/videogames.owl#Multiplayer"/>
+        <videogames:hasAgeLimit rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">9</videogames:hasAgeLimit>
+        <videogames:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">9.45</videogames:hasRating>
+        <videogames:hasReleaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2001</videogames:hasReleaseYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Moba -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Moba">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Characteristic"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Mortal_Kombat_11 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Mortal_Kombat_11">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#VideoGame"/>
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+            </owl:Restriction>
+        </rdf:type>
+        <videogames:hasGenre rdf:resource="http://ontologies/videogames.owl#Fighting"/>
+        <videogames:hasMainCharacter rdf:resource="http://ontologies/videogames.owl#Various_Fighters"/>
+        <videogames:hasMechanic rdf:resource="http://ontologies/videogames.owl#Team"/>
+        <videogames:hasType rdf:resource="http://ontologies/videogames.owl#Multiplayer"/>
+        <videogames:hasAgeLimit rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">18</videogames:hasAgeLimit>
+        <videogames:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">7.65</videogames:hasRating>
+        <videogames:hasReleaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2018</videogames:hasReleaseYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Multiplayer -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Multiplayer">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Type"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Open_world -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Open_world">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Characteristic"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Overwatch -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Overwatch">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#VideoGame"/>
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+            </owl:Restriction>
+        </rdf:type>
+        <videogames:hasGenre rdf:resource="http://ontologies/videogames.owl#Shooter"/>
+        <videogames:hasMainCharacter rdf:resource="http://ontologies/videogames.owl#Tracer"/>
+        <videogames:hasMechanic rdf:resource="http://ontologies/videogames.owl#Team"/>
+        <videogames:hasType rdf:resource="http://ontologies/videogames.owl#Multiplayer"/>
+        <videogames:hasAgeLimit rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">16</videogames:hasAgeLimit>
+        <videogames:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">8.3</videogames:hasRating>
+        <videogames:hasReleaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2017</videogames:hasReleaseYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Platformer -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Platformer">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Characteristic"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#RPG -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#RPG">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Characteristic"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Red_Dead_Redemption_2 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Red_Dead_Redemption_2">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#VideoGame"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#WellRatedVideoGame"/>
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+            </owl:Restriction>
+        </rdf:type>
+        <videogames:hasGenre rdf:resource="http://ontologies/videogames.owl#Action-Adventure"/>
+        <videogames:hasMainCharacter rdf:resource="http://ontologies/videogames.owl#Arthur_Morgan"/>
+        <videogames:hasMechanic rdf:resource="http://ontologies/videogames.owl#Open_world"/>
+        <videogames:hasType rdf:resource="http://ontologies/videogames.owl#Single_player"/>
+        <videogames:hasAgeLimit rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">18</videogames:hasAgeLimit>
+        <videogames:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">9.765</videogames:hasRating>
+        <videogames:hasReleaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2022</videogames:hasReleaseYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Resident_Evil_Village -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Resident_Evil_Village">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#VideoGame"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#WellRatedVideoGame"/>
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+            </owl:Restriction>
+        </rdf:type>
+        <videogames:hasGenre rdf:resource="http://ontologies/videogames.owl#Survival_Horror"/>
+        <videogames:hasMainCharacter rdf:resource="http://ontologies/videogames.owl#Ethan_Winters"/>
+        <videogames:hasMechanic rdf:resource="http://ontologies/videogames.owl#Side_Scrolling"/>
+        <videogames:hasType rdf:resource="http://ontologies/videogames.owl#Single_player"/>
+        <videogames:hasAgeLimit rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">13</videogames:hasAgeLimit>
+        <videogames:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">9.45</videogames:hasRating>
+        <videogames:hasReleaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2015</videogames:hasReleaseYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Role-Playing -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Role-Playing">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Characteristic"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Sandbox -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Sandbox">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Characteristic"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Shooter -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Shooter">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Characteristic"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Side_Scrolling -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Side_Scrolling">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Characteristic"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Simulator -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Simulator">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Characteristic"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Single_player -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Single_player">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Characteristic"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Type"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Social_Deduction -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Social_Deduction">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Characteristic"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Sports -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Sports">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Characteristic"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Steve -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Steve">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Creature"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Strategy -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Strategy">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Characteristic"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Summoner -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Summoner">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Creature"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Super_Mario_Bros -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Super_Mario_Bros">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#VideoGame"/>
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+            </owl:Restriction>
+        </rdf:type>
+        <videogames:hasGenre rdf:resource="http://ontologies/videogames.owl#Platformer"/>
+        <videogames:hasMainCharacter rdf:resource="http://ontologies/videogames.owl#Mario"/>
+        <videogames:hasMechanic rdf:resource="http://ontologies/videogames.owl#Role-Playing"/>
+        <videogames:hasType rdf:resource="http://ontologies/videogames.owl#Single_player"/>
+        <videogames:hasAgeLimit rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5</videogames:hasAgeLimit>
+        <videogames:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.765</videogames:hasRating>
+        <videogames:hasReleaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1989</videogames:hasReleaseYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Survival -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Survival">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Characteristic"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Survival_Horror -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Survival_Horror">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Characteristic"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Team -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Team">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Characteristic"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#The_Ashen_One -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#The_Ashen_One">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Creature"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#The_Sims_3 -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#The_Sims_3">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#VideoGame"/>
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+            </owl:Restriction>
+        </rdf:type>
+        <videogames:hasGenre rdf:resource="http://ontologies/videogames.owl#Simulator"/>
+        <videogames:hasGenre rdf:resource="http://ontologies/videogames.owl#Sports"/>
+        <videogames:hasMainCharacter rdf:resource="http://ontologies/videogames.owl#Empty"/>
+        <videogames:hasMechanic rdf:resource="http://ontologies/videogames.owl#Open_world"/>
+        <videogames:hasType rdf:resource="http://ontologies/videogames.owl#Single_player"/>
+        <videogames:hasAgeLimit rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">12</videogames:hasAgeLimit>
+        <videogames:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.55</videogames:hasRating>
+        <videogames:hasReleaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2013</videogames:hasReleaseYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Tracer -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Tracer">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Creature"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#V -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#V">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Creature"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Various_Fighters -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Various_Fighters">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Creature"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#View -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#View">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Characteristic"/>
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#_Breath_of_the_Wild -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#_Breath_of_the_Wild">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#_Skyrim -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#_Skyrim">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#WellRatedVideoGame"/>
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#_Warzone -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#_Warzone">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#_Wild_Hunt -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#_Wild_Hunt">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#WellRatedVideoGame"/>
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                        <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasGenre"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Genre"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMainCharacter"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#MainCharacter"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasMechanic"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Mechanic"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontologies/videogames.owl#hasType"/>
+                <owl:someValuesFrom rdf:resource="http://ontologies/videogames.owl#Type"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#Call_of_Duty:_Warzone -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#Call_of_Duty:_Warzone">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#VideoGame"/>
+        <videogames:hasGenre rdf:resource="http://ontologies/videogames.owl#Battle_Royale"/>
+        <videogames:hasMainCharacter rdf:resource="http://ontologies/videogames.owl#Custom_Operator"/>
+        <videogames:hasMechanic rdf:resource="http://ontologies/videogames.owl#Strategy"/>
+        <videogames:hasType rdf:resource="http://ontologies/videogames.owl#Multiplayer"/>
+        <videogames:hasAgeLimit rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">21</videogames:hasAgeLimit>
+        <videogames:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">5.3</videogames:hasRating>
+        <videogames:hasReleaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2004</videogames:hasReleaseYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#The_Elder_Scrolls_V:_Skyrim -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#The_Elder_Scrolls_V:_Skyrim">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#VideoGame"/>
+        <videogames:hasGenre rdf:resource="http://ontologies/videogames.owl#Action_RPG"/>
+        <videogames:hasMainCharacter rdf:resource="http://ontologies/videogames.owl#Dragonborn"/>
+        <videogames:hasMechanic rdf:resource="http://ontologies/videogames.owl#Team"/>
+        <videogames:hasType rdf:resource="http://ontologies/videogames.owl#Single_player"/>
+        <videogames:hasAgeLimit rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">21</videogames:hasAgeLimit>
+        <videogames:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">8.765</videogames:hasRating>
+        <videogames:hasReleaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2019</videogames:hasReleaseYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#The_Legend_of_Zelda:_Breath_of_the_Wild -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#The_Legend_of_Zelda:_Breath_of_the_Wild">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#VideoGame"/>
+        <videogames:hasGenre rdf:resource="http://ontologies/videogames.owl#Action-Adventure"/>
+        <videogames:hasMainCharacter rdf:resource="http://ontologies/videogames.owl#Link"/>
+        <videogames:hasMechanic rdf:resource="http://ontologies/videogames.owl#Open_world"/>
+        <videogames:hasType rdf:resource="http://ontologies/videogames.owl#Single_player"/>
+        <videogames:hasAgeLimit rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">15</videogames:hasAgeLimit>
+        <videogames:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">8.4</videogames:hasRating>
+        <videogames:hasReleaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2015</videogames:hasReleaseYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontologies/videogames.owl#The_Witcher_3:_Wild_Hunt -->
+
+    <owl:NamedIndividual rdf:about="http://ontologies/videogames.owl#The_Witcher_3:_Wild_Hunt">
+        <rdf:type rdf:resource="http://ontologies/videogames.owl#VideoGame"/>
+        <videogames:hasGenre rdf:resource="http://ontologies/videogames.owl#RPG"/>
+        <videogames:hasMainCharacter rdf:resource="http://ontologies/videogames.owl#Geralt_of_Rivia"/>
+        <videogames:hasMechanic rdf:resource="http://ontologies/videogames.owl#Open_world"/>
+        <videogames:hasType rdf:resource="http://ontologies/videogames.owl#Single_player"/>
+        <videogames:hasAgeLimit rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">18</videogames:hasAgeLimit>
+        <videogames:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">9.0</videogames:hasRating>
+        <videogames:hasReleaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2016</videogames:hasReleaseYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://ontologies/videogames.owl#hasGenre"/>
+            <rdf:Description rdf:about="http://ontologies/videogames.owl#hasMainCharacter"/>
+            <rdf:Description rdf:about="http://ontologies/videogames.owl#hasMechanic"/>
+            <rdf:Description rdf:about="http://ontologies/videogames.owl#hasType"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://ontologies/videogames.owl#hasAgeLimit"/>
+            <rdf:Description rdf:about="http://ontologies/videogames.owl#hasRating"/>
+            <rdf:Description rdf:about="http://ontologies/videogames.owl#hasReleaseYear"/>
+        </owl:members>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://ontologies/videogames.owl/game">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://ontologies/videogames.owl/rating">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>isWellRated</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://ontologies/videogames.owl#VideoGame"/>
+                        <swrl:argument1 rdf:resource="http://ontologies/videogames.owl/game"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://ontologies/videogames.owl#hasRating"/>
+                                <swrl:argument1 rdf:resource="http://ontologies/videogames.owl/game"/>
+                                <swrl:argument2 rdf:resource="http://ontologies/videogames.owl/rating"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThanOrEqual"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="http://ontologies/videogames.owl/rating"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8.5</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://ontologies/videogames.owl#WellRatedVideoGame"/>
+                        <swrl:argument1 rdf:resource="http://ontologies/videogames.owl/game"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+
