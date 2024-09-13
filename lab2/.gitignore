@@ -1,0 +1,77 @@
+# Системные файлы
+.DS_Store
+Thumbs.db
+
+# Среда разработки
+.vscode/
+.idea/
+*.suo
+*.ntvs_analysis.dat
+*.njsproj
+*.sln
+*.sw?
+*.sublime-workspace
+*.sublime-project
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg
+*.egg-info
+dist/
+build/
+*.log
+
+# Виртуальные окружения
+venv/
+env/
+ENV/
+*.env
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Pytest
+.cache/
+
+# Pyre type checker
+.pyre/
+
+# Coverage reports
+.coverage
+coverage.xml
+*.cover
+*.py,cover
+
+# MyPy
+.mypy_cache/
+
+# Python egg files
+*.egg
+
+# C extensions
+*.so
+
+# Cython debug symbols
+cython_debug/
+
+# Параметры IDE (например, PyCharm, VS Code и т. д.)
+.vscode/
+*.code-workspace
+.idea/
+
+# Другие
+*.db
+*.sqlite3
+*.pkl
+*.tmp
+*.bak
+*.swp
+
+# Файлы конфигурации, содержащие секреты или конфиденциальную информацию
+*.key
+*.pem
+*.crt
